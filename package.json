@@ -1,9 +1,9 @@
 {
-  "name": "rui",
+  "name": "@xtareq/rui",
   "version": "0.0.1",
   "description": "React UI Library",
   "scripts": {
-   "rollup":"rollup -c"
+    "rollup": "rollup -c"
   },
   "keywords": [],
   "author": "Tareq Hossain",
@@ -16,6 +16,7 @@
     "react": "^17.0.2",
     "rollup": "^2.67.2",
     "rollup-plugin-dts": "^4.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^4.5.5"
   },
   "main": "dist/cjs/index.js",
@@ -23,5 +24,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/xtareq"
+  }
 }
