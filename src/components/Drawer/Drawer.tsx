@@ -1,11 +1,13 @@
 import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { forwardRef, useRef } from "react"
+import {  useRef } from "react"
 import { useEffect } from "react"
-import { useImperativeHandle } from "react"
 import { useState } from "react"
 import { FiX } from "react-icons/fi"
 import styled from "styled-components"
+
+
+
 
 const StyledOverlay = styled(motion.div)<any>`
 &.overlay{

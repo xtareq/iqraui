@@ -1,9 +1,9 @@
 {
   "name": "@xtareq/rui",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "React UI Library",
   "scripts": {
-    "rollup": "rollup -c"
+    "build": "rollup -c"
   },
   "author": "Tareq Hossain",
   "license": "ISC",
