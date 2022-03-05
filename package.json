@@ -1,11 +1,10 @@
 {
   "name": "@xtareq/rui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React UI Library",
   "scripts": {
     "rollup": "rollup -c"
   },
-  "keywords": [],
   "author": "Tareq Hossain",
   "license": "ISC",
   "devDependencies": {
@@ -33,7 +32,19 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/xtareq"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtareq/rui.git"
+  },
+  "keywords": [
+    "react",
+    "reactui",
+    "react-component",
+    "react-select",
+    "react-input"
+  ],
+  "bugs": {
+    "url": "https://github.com/xtareq/rui/issues"
+  },
+  "homepage": "https://github.com/xtareq/rui#readme"
 }

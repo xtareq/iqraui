@@ -1,5 +1,5 @@
 
 
-export {default as Button} from './Button';
-export {default as Row} from './Row';
+export * from './Button';
+export * from './Row';
 export * as Theme from './Theme'

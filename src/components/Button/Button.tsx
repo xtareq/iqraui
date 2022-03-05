@@ -1,57 +1,110 @@
-import styled from "styled-components"
-import { calcColor, isLighterColor } from "../../helpers"
-import React, { ReactElement } from "react";
+import React from "react";
+import styled, { css } from "styled-components";
+import {calcColor}  from "../helpers/colors";
 
 
-type COLORS = "primary" | "default" | "danger" | "warning" | "success" | "secondary" | "dark"
-
-const Sizes = {
-    xs:'12px',
-    lg: '22px',
-    xl: '28px',
-    xxl: '36px'
-}
-interface ButtonProps extends  React.ComponentPropsWithoutRef<"button">{
-    children:any
-    color:COLORS,
-    suffix?: ReactElement,
-    rounded?: boolean,
-    size?: 'xs' | 'lg' |'xl' |'xxl',
-    link?: boolean
+type ButtonProps={
+    color:'primary'| 'success' | 'info'| 'warning'| 'danger' | 'ghost'
+    size?:any,
+    children?:any,
+    onClick?:any
 }
 
-const StyledButton = styled.button<ButtonProps>`
-    
-
-    background-color: ${(props)=>props.theme[props.color]};
-    color:${(props)=>isLighterColor(props.theme[props.color])? "#000000" :"#fff" };
-    cursor:pointer;
-    border:1px solid ${(props)=>calcColor(props.theme[props.color],-20)};
-    padding:8px 16px;
-    box-shadow:  0 4px 15px -3px ${(props)=>calcColor(props.theme[props.color],20)}50, 0 4px 6px -4px ${(props)=>calcColor(props.theme[props.color],20)}50;
-    
-    ${props=> props.rounded && `
-        border-radius:24px;
+const GhostButton = styled.button<ButtonProps>`
+    background-color:transparent;
+    border-color:none;
+    color:${props=>props.theme[props.theme.mode].primaryText};
+    border:none;
+    font-size: 1.5rem;
+    ${props=>props.size && css`
+        ${props.size == 'xs' && `
+            padding: calc(0.6875rem / 3)  calc(1.125rem/3);
+            
+        `}
     `}
-
-    ${props=> props.size && `
-        font-size: ${Sizes[props.size]};
-        padding:calc(${Sizes[props.size]} / 2) calc(${Sizes[props.size]} * 1.5);
-    `}
-    
-    &:hover,&:active{
-        background-color: ${(props)=>calcColor(props.theme[props.color],-40)};
-        border-color: ${(props)=>calcColor(props.theme[props.color],-40)};
-        box-shadow:  0 10px 15px -3px ${(props)=>calcColor(props.theme[props.color],20)}20, 0 4px 6px -4px ${(props)=>calcColor(props.theme[props.color],20)};
-    
-    
+    line-height: 1rem;
+    transition-duration: .15s;
+    transition-property: background-color,border-color,box-shadow,color;
+    transition-timing-function: ease-in;
+    appearance: none;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+    position: relative;
+    &:hover{
+        color:${props=>props.theme[props.theme.mode].colors.primary};
     }
+
 
 `
 
+const StyledButton = styled.button<ButtonProps>`
+    background-color:${(props:any)=>props.color == 'ghost' ? 'transparent': props.theme[props.theme.mode].colors[props.color]};
+    border-color:${(props:any)=> props.theme[props.theme.mode].colors[props.color]} !important;
+    color: #fff;
+    margin-top:0 !important;
+    padding: 0.6875rem 1.125rem;
+    border-style: solid;
+    border-width: 0.0625rem;
+    border-radius: 0.25rem;
+    font-size: .875rem;
+    ${props=>props.size && css`
+        ${props.size == 'xs' && `
+            padding: calc(0.6875rem / 3)  calc(1.125rem/3);
+            font-size: calc(.875rem/3);
+        `}
+    
+    `}
 
-const Button = (props:ButtonProps) =>{
-    return <StyledButton {...props}>{props.children}</StyledButton>
+
+    line-height: 1rem;
+    transition-duration: .15s;
+    transition-property: background-color,border-color,box-shadow,color;
+    transition-timing-function: ease-in;
+    appearance: none;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+    position: relative;
+
+    &:hover{
+        background-color:${(props:any)=> calcColor(props.theme[props.theme.mode].colors[props.color],20)};
+        border-color:${(props:any)=> calcColor(props.theme[props.theme.mode].colors[props.color],20)} !important;
+    }
+
+    &:focus{
+        background-color:${(props:any)=> calcColor(props.theme[props.theme.mode].colors[props.color],-20)}};
+        border-color:${(props:any)=> calcColor(props.theme[props.theme.mode].colors[props.color],-20)}};
+    }
+
+    &:active{
+        background-color:${(props:any)=> calcColor(props.theme[props.theme.mode].colors[props.color],-30)}};
+        border-color:${(props:any)=> calcColor(props.theme[props.theme.mode].colors[props.color],-30)}};
+    }
+`
+
+const Button =(props:ButtonProps)=>{
+    if(props.color == "ghost"){
+        return <GhostButton {...props}></GhostButton>
+    }
+
+    return <StyledButton {...props} >{props.children}</StyledButton>
 }
 
 
