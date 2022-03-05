@@ -36,7 +36,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xtareq/rui.git"
+    "url": "git+https://github.com/xtareq/xtareq-rui.git"
   },
   "keywords": [
     "react",
@@ -46,7 +46,7 @@
     "react-input"
   ],
   "bugs": {
-    "url": "https://github.com/xtareq/rui/issues"
+    "url": "https://github.com/xtareq/xtareq-rui/issues"
   },
-  "homepage": "https://github.com/xtareq/rui#readme"
+  "homepage": "https://github.com/xtareq/xtareq-rui#readme"
 }
