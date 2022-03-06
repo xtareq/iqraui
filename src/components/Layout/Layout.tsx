@@ -27,7 +27,7 @@ const StyledLayout:any = styled.div`
 `
 
 const StyledContent = styled.div`
-    padding-top: 3.75rem;
+    
     overflow-x:hidden;
     min-height: 100vh;
     transition: all 0.5s ease;
@@ -40,7 +40,11 @@ const StyledContent = styled.div`
         }
     `}
     .layout-content{
-        padding: 2.25rem 2.25rem 0.75rem;
+        ${(props:any)=> props.fixed ? css`
+            padding-top: 3.75rem;
+            padding: 2.25rem 2.25rem 0.75rem;
+        `:' padding: 1.25rem 1.25rem 0.75rem;'}
+       
     }
 
 `
@@ -123,7 +127,7 @@ const StyledHeader = styled(motion.div)<{fixed:boolean}>`
 
 const LayoutHeader = (props:any) => {
 
-    return <StyledHeader {...props} fixed>
+    return <StyledHeader {...props} >
         <nav>
             {props.children}
         </nav>
