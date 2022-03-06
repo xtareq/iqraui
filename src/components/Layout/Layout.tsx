@@ -40,10 +40,11 @@ const StyledContent = styled.div`
         }
     `}
     .layout-content{
-        ${(props:any)=> props.fixed ? css`
-            padding: 2.25rem 2.25rem 0.75rem;
+        padding: 1.25rem 1.25rem 0.75rem;
+        ${(props:any)=> props.fixed && css`
+
             margin-top: 3.75rem;
-        `:' padding: 1.25rem 1.25rem 0.75rem;'}
+        `}
        
     }
 
