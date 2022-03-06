@@ -136,7 +136,7 @@ const LayoutHeader = (props:any) => {
 
 const LayoutContent = (props:any) => {
 
-    return <StyledContent>
+    return <StyledContent {...props}>
         <div  className="layout-content">
             {props.children}
         </div>
