@@ -6,9 +6,6 @@ import { useState } from "react"
 import { FiX } from "react-icons/fi"
 import styled from "styled-components"
 
-
-
-
 const StyledOverlay = styled(motion.div)<any>`
 &.overlay{
     position:fixed;
