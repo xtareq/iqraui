@@ -32,9 +32,7 @@ const StyledContent = styled.div`
     min-height: 100vh;
     transition: all 0.5s ease;
     ${(props:any)=>props.theme.sidebar && css`
-       
         padding-left:16rem;
-
         @media (max-width:1200px){
             transform:translateX(1rem);
         }
@@ -42,7 +40,6 @@ const StyledContent = styled.div`
     .layout-content{
         padding: 1.25rem 1.25rem 0.75rem;
         ${(props:any)=> props.fixed && css`
-
             margin-top: 3.75rem;
         `}
        
