@@ -6,7 +6,7 @@ const StyledBadge = styled.span<any>`
   .count{
     overflow: hidden;
     position: absolute;
-    top: -8px;
+    top: 8px;
     right: 1px;
     transform: translate(50%,-50%);
     transform-origin: 100% 0%;

@@ -23,9 +23,9 @@ const StyledDrawer=styled.div<any>`
     overflow-x:hidden;
     position:fixed;
     top:0;
-     ${props=>props.position && `
+     ${props=>props.position ? `
      ${[props.position]}:0;
-     `}
+     `:'left:0;'}
     width: 320px;
     z-index:50;
     min-width:0;
@@ -139,7 +139,7 @@ const Drawer:FC = (props:any)=>{
                    <CloseIcon onClick={toggle} id="close"/>
                     {children}
                </div>
-           </StyledDrawer>
+             </StyledDrawer>
             </>
             
            }
