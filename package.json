@@ -1,6 +1,6 @@
 {
   "name": "iqraui",
-  "version": "0.2.5",
+  "version": "0.2.7",
   "description": "React UI Library",
   "scripts": {
     "build": "npx rimraf dist && rollup -c"

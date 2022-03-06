@@ -19,6 +19,7 @@ const StyledButton = styled.button<ButtonProps>`
         height:48px;
 
         span{
+            color: ${(props:any)=> props.theme[props.theme.mode].primaryText};
             font-size:24px;
         }
 
