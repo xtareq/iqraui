@@ -1,4 +1,4 @@
-import React,{ createContext, FC, useState } from "react"
+import React,{ createContext, FC, useEffect, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./global"
 
@@ -98,6 +98,7 @@ const TProvider:FC =(props:any) => {
     }
     const value = props.theme ? {...theme,sidebar,...props.theme} : {...theme,sidebar}
 
+
     const changeTheme = (mode:ThemeModes)=>{
             setCurrent(mode)
             if(typeof window !=='undefined'){
@@ -119,7 +120,6 @@ const TProvider:FC =(props:any) => {
                     }}
                 </ThemeContext.Consumer>
             </ThemeContext.Provider> 
-
 }
 
 

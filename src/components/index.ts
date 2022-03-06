@@ -15,3 +15,4 @@ export * from './Row';
 export * from './Select';
 export * from './Space';
 export * from './Theme'
+export * from './Theme/hooks'

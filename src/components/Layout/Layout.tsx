@@ -101,6 +101,7 @@ const StyledHeader = styled(motion.div)<{fixed:boolean}>`
     line-height: 1.25rem;
     nav{
         max-width: 1920px;
+        height:${(props:any)=>props.height && props.height || '64px'};
         margin: 0 auto;
         align-items: center;
         justify-content: flex-start;
@@ -111,11 +112,11 @@ const StyledHeader = styled(motion.div)<{fixed:boolean}>`
 
     ${(props:any)=> props.fixed && css`
      
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index:2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:2;
     `}
 
 `
@@ -146,8 +147,6 @@ const LayoutSidebar= (props:any) => {
             theme.toggleSidebar()
         }
     },[])
-
-    console.log(theme.sidebar)
 
     return <AnimatePresence>
            {theme.sidebar && <StyledSidebar>
