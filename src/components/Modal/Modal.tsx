@@ -4,11 +4,16 @@ import { forwardRef, useRef } from "react"
 import { useEffect } from "react"
 import { useImperativeHandle } from "react"
 import { useState } from "react"
-import { FaTimesCircle } from "react-icons/fa"
-import { FiX } from "react-icons/fi"
 import styled from "styled-components"
 import { calcColor } from "../helpers/colors"
-import { useOnClickOutside } from "../hooks/useClickOutside"
+
+
+
+const CloseIcon = (props:any) => {
+    return <>
+    <svg {...props} stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </>
+}
 
 
 const StyledDrawer=styled.div<any>`
@@ -174,11 +179,11 @@ const Modal = forwardRef((props:any,ref:any)=>{
             {show && <StyledDrawer {...props} transition={{duration:0.3}} as={motion.div} initial={animate.initial} animate={animate.animate} exit={animate.exit}>
             {props.backdrop && <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}  className="overlay">
                     <span>
-                        <FaTimesCircle onClick={close} />
+                        <CloseIcon onClick={close} />
                     </span>
                 </motion.div>}
                <div className={'inner'}>
-                    {props.title && <SyledHeader>{props.title}   <FiX className="close" onClick={close} /></SyledHeader>}
+                    {props.title && <SyledHeader>{props.title}   <CloseIcon className="close" onClick={close} /></SyledHeader>}
                     {props.children}
                </div>
            </StyledDrawer>}
