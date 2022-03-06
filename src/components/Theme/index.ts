@@ -1,1 +1,1 @@
-export {default} from './ThemeProvider'
+export {default as TProvider} from './TProvider'

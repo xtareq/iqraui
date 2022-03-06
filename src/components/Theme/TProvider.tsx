@@ -1,4 +1,4 @@
-import React,{ createContext, useState } from "react"
+import React,{ createContext, FC, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./global"
 
@@ -41,7 +41,7 @@ const currentTheme = (mode="light"):ThemeModes =>{
 }
 
 
-const TProvider =(props:any) => {
+const TProvider:FC =(props:any) => {
 
     const [current, setCurrent] = useState<ThemeModes>(currentTheme(props.mode))
     const [sidebar, setSidebar] = useState<Boolean>(false)
