@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const StyledBadge = styled.span<any>`
@@ -30,7 +30,7 @@ const StyledBadge = styled.span<any>`
   }
 `;
 
-const Badge = (props:any) => {
+const Badge:FC = (props:any) => {
 
   return (
     <StyledBadge color={props.color?props.color:'danger'}>

@@ -1,5 +1,5 @@
 import styled,{css} from 'styled-components'
-import React,{ forwardRef } from 'react'
+import React,{ FC, forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import { calcColor } from '../helpers/colors'
 
@@ -72,7 +72,7 @@ const StyledInput = styled(motion.div)<any>`
     }
 `
 
-const Input = forwardRef((props:any, ref) =>{
+const Input:FC = forwardRef((props:any, ref) =>{
    const { animate, initial, error, rounded, large, transition, exit, prefix, suffix, ...inputProps } = props
     return (
       <StyledInput className='inPut-zo' error={error?'true':'false'} initial={initial} animate={animate} transition={transition} exit={exit} rounded={rounded? 'true' :''}  large={large?'true':''}>

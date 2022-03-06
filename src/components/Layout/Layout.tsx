@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React,{ useEffect } from "react";
+import React,{ FC, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { calcColor } from "../helpers/colors";
 import { useTheme } from "../Theme/hooks";

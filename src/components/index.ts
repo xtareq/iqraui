@@ -14,4 +14,4 @@ export * from './Modal';
 export * from './Row';
 export * from './Select';
 export * from './Space';
-export * as Theme from './Theme'
+export * from './Theme'

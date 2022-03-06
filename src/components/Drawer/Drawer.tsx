@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import {  useRef } from "react"
 import { useEffect } from "react"
@@ -60,7 +60,7 @@ const StyledDrawer=styled.div<any>`
 `
 
 
-const Drawer = (props:any)=>{
+const Drawer:FC = (props:any)=>{
     const [show, setShow]= useState(false)
     const toggle = ()=>setShow(!show)
     const close = () => setShow(false)

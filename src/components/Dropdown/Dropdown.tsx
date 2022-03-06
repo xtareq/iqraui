@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { createContext, useContext, Children, useEffect, useState, createRef, Fragment, ReactElement } from "react";
 import styled, { css } from "styled-components";
@@ -102,10 +102,11 @@ type SelectItem = {
 type DropdownProps = {
     children:any,
     title:string | ReactElement
+    Items: FC,
 }
 
 
-const Items = (props:any) => {
+const Items:FC = (props:any) => {
     const ctx = useContext(DropdownContext)
 
     return <div>
@@ -119,7 +120,7 @@ const Items = (props:any) => {
     </div>
 }
 
-const Item = (props:any) => {
+const Item:FC = (props:any) => {
     const ctx = useContext(DropdownContext)
     return <StyledOption onClick={()=>ctx.close()}>
         {props.children}

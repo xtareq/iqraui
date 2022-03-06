@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import styled from "styled-components"
 
 
@@ -35,7 +35,7 @@ interface Props extends FlexProps{
     style?:any
 }
 
-const Flex = (props:Props) => {
+const Flex:FC = (props:Props) => {
     const { justify, align, direction, gap, wrap,style } = props
     let vpros:Props ={justify, align, direction, gap, wrap, style}
 

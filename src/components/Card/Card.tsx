@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { StyledComponent, StyledComponentProps } from "styled-components";
 import { calcColor } from "../helpers/colors";
 
 
 
 
-const Card:any = styled.div`
+const Card:any = styled.div<any>`
     background-color: ${(props:any)=> props.theme[props.theme.mode].contentBg};
     border: 0.0625rem solid ${(props:any)=> calcColor(props.theme[props.theme.mode].contentBg,-8)};
     border-radius: 0.25rem;

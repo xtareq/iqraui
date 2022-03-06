@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 
 const getColor = (props:any)=>{
@@ -83,7 +83,7 @@ const StyledDivider = styled.div<any>`
 
 `;
 
-const Divider = (props:any) => {
+const Divider:FC = (props:any) => {
     let text = 'none'
     if(props.text){
         text = props.text

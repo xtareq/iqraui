@@ -1,4 +1,4 @@
-import React,{ forwardRef, useEffect, useState } from 'react'
+import React,{ FC, forwardRef, useEffect, useState } from 'react'
 import styled,{ css} from 'styled-components'
 
 
@@ -57,7 +57,7 @@ span.text{
 `
 
 
-const Checkbox = forwardRef((props:any, ref)=>{
+const Checkbox:FC = forwardRef((props:any, ref)=>{
 const { children, color, checked,...inputProps} = props
 
 

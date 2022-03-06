@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled, { css } from "styled-components";
 import {calcColor}  from "../helpers/colors";
 
@@ -99,7 +99,7 @@ const StyledButton = styled.button<ButtonProps>`
     }
 `
 
-const Button =(props:ButtonProps)=>{
+const Button:FC<ButtonProps> =(props:ButtonProps)=>{
     if(props.color == "ghost"){
         return <GhostButton {...props}></GhostButton>
     }

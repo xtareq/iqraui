@@ -1,4 +1,4 @@
-import React,{ Children } from "react"
+import React,{ Children, FC } from "react"
 import styled, { css } from "styled-components"
 
 
@@ -26,13 +26,13 @@ const StyledCol = styled.div<any>`
     `}
 
 `
-const Col = (props:any) => {
+const Col:FC = (props:any) => {
     return <StyledCol className="col" {...props}>
        {props.children}
     </StyledCol>
 }
 
-const Row = (props:any) => {
+const Row:FC = (props:any) => {
 
     return <StyledRow {...props}>
         {props.children}
