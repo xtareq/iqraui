@@ -123,7 +123,7 @@ const StyledHeader = styled(motion.div)<{fixed:boolean}>`
 
 const LayoutHeader = (props:any) => {
 
-    return <StyledHeader fixed>
+    return <StyledHeader {...props} fixed>
         <nav>
             {props.children}
         </nav>
