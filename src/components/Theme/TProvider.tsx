@@ -36,6 +36,8 @@ const currentTheme = (mode="light"):ThemeModes =>{
     let theme = ""
     if(typeof window !== 'undefined'){
         theme = localStorage.getItem('theme') || mode
+    }else{
+        theme = mode
     }
     return theme as ThemeModes
 }
